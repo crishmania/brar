@@ -115,82 +115,21 @@ img {
   -webkit-user-drag: none;
 }
 
-/* Full-page diagonal watermark — visible in any screenshot */
-.screenshot-guard {
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='160'%3E%3Cdefs%3E%3Cpattern id='w' patternUnits='userSpaceOnUse' width='320' height='160' patternTransform='rotate(-28)'%3E%3Ctext x='8' y='80' font-family='Arial,sans-serif' font-size='13' font-weight='700' fill='%230f172a' fill-opacity='0.07' letter-spacing='1'%3EPRIVATE DEMO — NO SCREENSHOTS%3C/text%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23w)'/%3E%3C/svg%3E");
-  background-size: 320px 160px;
-}
-
-/* Flash overlay when screenshot key is detected */
-.capture-flash {
-  position: fixed;
-  inset: 0;
-  z-index: 100000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(15, 23, 42, 0.97);
-  color: #fff;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.15s ease;
-  pointer-events: none;
-}
-
-.capture-flash.is-active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.capture-flash p {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  text-align: center;
-  padding: 2rem;
-  max-width: 420px;
-  line-height: 1.5;
-}
-
-/* DevTools warning overlay */
+/* DevTools warning — subtle, no branding */
 body.devtools-warning::before {
-  content: 'Private demo — inspection and copying are not permitted.';
+  content: 'Content is protected.';
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 99999;
-  background: #7f1d1d;
+  background: var(--ink);
   color: #fff;
   text-align: center;
-  padding: 0.75rem 1rem;
+  padding: 0.625rem 1rem;
   font-family: var(--font-display);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
-}
-
-/* Demo watermark badge */
-body::after {
-  content: 'PRIVATE DEMO';
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 50;
-  font-family: var(--font-display);
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--ink-muted);
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-body.devtools-warning::after {
-  bottom: 3.5rem;
 }
 
 @media print {
@@ -198,7 +137,7 @@ body.devtools-warning::after {
     display: none !important;
   }
   body::before {
-    content: 'Printing is disabled for this private demo.';
+    content: 'Printing is not available.';
     display: block !important;
     font-size: 14pt;
     padding: 2rem;
@@ -1618,16 +1557,98 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
-  :root { --header-h: 68px; }
+  :root { --header-h: 64px; }
+
+  .site-header__logo { width: 92px; }
 
   .site-header__links,
   .site-header .btn--copper { display: none; }
 
   .menu-btn { display: flex; }
 
-  .hero__metrics { flex-wrap: wrap; gap: 1.5rem; }
-  .hero__visual { height: 340px; }
+  /* Hero — mobile-first layout */
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__inner {
+    min-height: auto;
+    padding: 1.75rem 0 2.5rem;
+    gap: 2rem;
+  }
+
+  .hero__text .label {
+    margin-bottom: 1rem;
+    font-size: 0.6875rem;
+  }
+
+  h1, .hero__title {
+    font-size: clamp(1.875rem, 7.5vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .hero__title .highlight {
+    background: none;
+    -webkit-text-fill-color: var(--copper);
+    color: var(--copper);
+  }
+
+  .hero__desc {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+    max-width: none;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+  }
+
+  .hero__metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding-top: 1.5rem;
+  }
+
+  .metric__val {
+    font-size: 1.625rem;
+  }
+
+  .metric__lbl {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .hero__visual {
+    height: 260px;
+    order: -1;
+  }
+
+  .hero__img-main {
+    width: 100%;
+    height: 85%;
+    right: 0;
+  }
+
+  .hero__img-float {
+    width: 42%;
+  }
+
+  .hero__img-float img {
+    height: 140px;
+  }
+
   .hero__badge { display: none; }
+
+  .hero__flow-line { display: none; }
 
   .trust-strip__grid { grid-template-columns: 1fr; }
   .scope { grid-template-columns: 1fr; }

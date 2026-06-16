@@ -1,9 +1,6 @@
 (function () {
   'use strict';
 
-  var flashEl = document.getElementById('captureFlash');
-  var flashTimer = null;
-
   function blockEvent(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -14,13 +11,8 @@
     var key = e.key;
     var code = e.keyCode || e.which;
 
-    // Print Screen (Windows/Linux)
     if (key === 'PrintScreen' || code === 44) return true;
-
-    // macOS screenshots: Cmd+Shift+3 / 4 / 5
     if (e.metaKey && e.shiftKey && (key === '3' || key === '4' || key === '5')) return true;
-
-    // Windows Snipping Tool: Win+Shift+S (Windows only)
     if (!/Mac|iPhone|iPad|iPod/.test(navigator.userAgent) && e.metaKey && e.shiftKey && key.toLowerCase() === 's') return true;
 
     return false;
@@ -42,53 +34,32 @@
     return false;
   }
 
-  function showCaptureWarning() {
-    if (!flashEl) return;
-    flashEl.classList.add('is-active');
-    clearTimeout(flashTimer);
-    flashTimer = setTimeout(function () {
-      flashEl.classList.remove('is-active');
-    }, 1200);
-  }
-
   function clearClipboard() {
     if (!navigator.clipboard || !navigator.clipboard.writeText) return;
-    navigator.clipboard.writeText('Screenshots are not permitted — brardemo.soseeks.com private demo.').catch(function () {});
+    navigator.clipboard.writeText('').catch(function () {});
   }
 
-  function onScreenshotAttempt() {
-    showCaptureWarning();
-    clearClipboard();
-  }
-
-  // Right-click
   document.addEventListener('contextmenu', blockEvent, true);
 
-  // Block shortcuts on keydown
   document.addEventListener('keydown', function (e) {
     if (isBlockedShortcut(e)) {
-      if (isScreenshotShortcut(e)) onScreenshotAttempt();
+      if (isScreenshotShortcut(e)) clearClipboard();
       blockEvent(e);
     }
   }, true);
 
-  // Print Screen fires on keyup on some browsers
   document.addEventListener('keyup', function (e) {
     if (e.key === 'PrintScreen' || (e.keyCode || e.which) === 44) {
-      onScreenshotAttempt();
+      clearClipboard();
       blockEvent(e);
     }
   }, true);
 
-  // Copy / cut / paste
   ['copy', 'cut', 'paste'].forEach(function (type) {
     document.addEventListener(type, blockEvent, true);
   });
 
-  // Text selection
   document.addEventListener('selectstart', blockEvent, true);
-
-  // Drag images
   document.addEventListener('dragstart', blockEvent, true);
 
   document.querySelectorAll('img').forEach(function (img) {
@@ -96,39 +67,12 @@
     img.addEventListener('contextmenu', blockEvent, true);
   });
 
-  // Blur page when tab loses focus (deters some capture tools)
-  var hiddenOverlay = null;
-
-  function createHiddenOverlay() {
-    if (hiddenOverlay) return hiddenOverlay;
-    hiddenOverlay = document.createElement('div');
-    hiddenOverlay.className = 'capture-flash is-active';
-    hiddenOverlay.setAttribute('aria-hidden', 'true');
-    hiddenOverlay.innerHTML = '<p>Private demo — content hidden while away.</p>';
-    hiddenOverlay.style.pointerEvents = 'none';
-    document.body.appendChild(hiddenOverlay);
-    return hiddenOverlay;
-  }
-
-  document.addEventListener('visibilitychange', function () {
-    if (document.hidden) {
-      createHiddenOverlay();
-    } else if (hiddenOverlay) {
-      hiddenOverlay.remove();
-      hiddenOverlay = null;
-    }
-  });
-
-  // Screen recording / capture API detection
   if (navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) {
-    var original = navigator.mediaDevices.getDisplayMedia.bind(navigator.mediaDevices);
     navigator.mediaDevices.getDisplayMedia = function () {
-      onScreenshotAttempt();
       return Promise.reject(new DOMException('Screen capture is not allowed.', 'NotAllowedError'));
     };
   }
 
-  // DevTools size-detection
   var devtoolsOpen = false;
   var threshold = 160;
 
