@@ -99,6 +99,7 @@ body {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  -webkit-touch-callout: none;
 }
 
 /* Allow interaction on links and buttons */
@@ -112,6 +113,47 @@ img {
   height: auto;
   display: block;
   -webkit-user-drag: none;
+}
+
+/* Full-page diagonal watermark — visible in any screenshot */
+.screenshot-guard {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='160'%3E%3Cdefs%3E%3Cpattern id='w' patternUnits='userSpaceOnUse' width='320' height='160' patternTransform='rotate(-28)'%3E%3Ctext x='8' y='80' font-family='Arial,sans-serif' font-size='13' font-weight='700' fill='%230f172a' fill-opacity='0.07' letter-spacing='1'%3EPRIVATE DEMO — NO SCREENSHOTS%3C/text%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23w)'/%3E%3C/svg%3E");
+  background-size: 320px 160px;
+}
+
+/* Flash overlay when screenshot key is detected */
+.capture-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.97);
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.capture-flash.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.capture-flash p {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 2rem;
+  max-width: 420px;
+  line-height: 1.5;
 }
 
 /* DevTools warning overlay */
@@ -131,7 +173,7 @@ body.devtools-warning::before {
   font-weight: 600;
 }
 
-/* Demo watermark */
+/* Demo watermark badge */
 body::after {
   content: 'PRIVATE DEMO';
   position: fixed;
