@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotation — BRAR Project | Soseeks India</title>
+  <style>
+    :root {
+      --blue: #2563eb;
+      --purple: #9333ea;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: #eef2f7;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem 2.5rem 1.35rem;
+      position: relative;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      left: 2.5rem;
+      right: 2.5rem;
+      bottom: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb 0%, #6366f1 50%, #9333ea 100%);
+      border-radius: 999px;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      margin-top: 1.25rem;
+    }
+
+    .logo svg {
+      height: 64px;
+      width: auto;
+      display: block;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .company-meta {
+      text-align: right;
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .company-meta strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .title-block {
+      padding: 1.75rem 2.5rem 1.25rem;
+      background: #eef2ff;
+      background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+    }
+
+    .title-block h1 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .title-block p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem 2.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .meta-box h2 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta-box p {
+      font-size: 0.92rem;
+    }
+
+    .meta-box--right {
+      text-align: right;
+      justify-self: end;
+    }
+
+    .section {
+      padding: 1.5rem 2.5rem;
+    }
+
+    .section h2 {
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+      color: var(--ink);
+    }
+
+    .section p,
+    .section li {
+      font-size: 0.92rem;
+      color: #334155;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    thead th {
+      text-align: left;
+      padding: 0.75rem 0.85rem;
+      background: var(--bg);
+      border-bottom: 2px solid var(--line);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    tbody td {
+      padding: 0.85rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tbody td.num,
+    tfoot td.num {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    tfoot td {
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    tfoot tr:last-child td {
+      border-bottom: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding-top: 0.85rem;
+      color: var(--ink);
+    }
+
+    .discount td { color: #059669; }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .package {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.1rem 1rem 1rem;
+      background: #fff;
+    }
+
+    .package h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .package__rate {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .package__row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.84rem;
+      padding: 0.35rem 0;
+      border-bottom: 1px dashed #e8edf3;
+    }
+
+    .package__row:last-child {
+      border-bottom: none;
+      margin-top: 0.35rem;
+      padding-top: 0.55rem;
+      border-top: 2px solid var(--line);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .package__row span:last-child {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .package__discount {
+      color: #059669;
+    }
+
+    .choose-note {
+      padding: 0.85rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      color: #475569;
+    }
+
+    @media (max-width: 720px) {
+      .packages {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .includes {
+      display: grid;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .includes li {
+      position: relative;
+      padding-left: 1.35rem;
+    }
+
+    .includes li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .terms {
+      background: var(--bg);
+      border-top: 1px solid var(--line);
+    }
+
+    .terms ol {
+      padding-left: 1.25rem;
+    }
+
+    .terms li {
+      margin-bottom: 0.55rem;
+    }
+
+    .footer {
+      padding: 1.25rem 2.5rem 2rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+    }
+
+    .signature p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .signature strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .stamp {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .note {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .print-toolbar {
+      max-width: 820px;
+      margin: 0 auto 1rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .print-btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.65rem 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    }
+
+    .print-btn:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    @media print {
+      html, body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      body {
+        background: #fff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .print-toolbar {
+        display: none !important;
+      }
+
+      .page {
+        box-shadow: none !important;
+        border: none !important;
+        max-width: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        background: #fff !important;
+      }
+
+      .header::after {
+        background: linear-gradient(90deg, #2563eb 0%, #6366f1 50%, #9333ea 100%) !important;
+      }
+
+      .title-block {
+        background: #eef2ff !important;
+      }
+
+      thead th {
+        background: #f1f5f9 !important;
+        color: #64748b !important;
+      }
+
+      .choose-note,
+      .terms {
+        background: #f8fafc !important;
+      }
+
+      .package__discount,
+      .package__discount span {
+        color: #059669 !important;
+      }
+
+      .includes li::before {
+        color: #2563eb !important;
+      }
+
+      .logo svg text,
+      .logo svg tspan {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .header,
+      .title-block,
+      .meta-grid,
+      .packages,
+      .package,
+      .choose-note,
+      .footer,
+      .terms {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .packages {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+
+      table {
+        break-inside: auto;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      @page {
+        size: A4 portrait;
+        margin: 10mm 12mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-toolbar">
+    <button type="button" class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+  <article class="page">
+    <header class="header">
+      <div class="logo">
+        <svg viewBox="0 0 248 56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Soseeks">
+          <text
+            x="0"
+            y="44"
+            font-family="Segoe UI, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+            font-size="48"
+            font-weight="700"
+            letter-spacing="-0.02em"
+          >
+            <tspan fill="#2563eb">Sos</tspan><tspan fill="#6366f1">ee</tspan><tspan fill="#9333ea">ks</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="company-meta">
+        <strong>Soseeks India Pvt Ltd</strong>
+        Plot 13, Sun City, Aryaa Nagar, Kohka,<br>
+        IIT Bhilai Road, Bhilai, Chhattisgarh 490023<br>
+        Phone: +91 8500518050<br>
+        Email: sanjay@soseeks.com<br>
+        GSTIN: 22ABRCS7054D1Z9
+      </div>
+    </header>
+
+    <div class="title-block">
+      <h1>Quotation for Development Services</h1>
+      <p>Project: BRAR | Quotation No: SSQ/BRAR/2026/001 | Date: 23 June 2026</p>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-box">
+        <h2>Prepared For</h2>
+        <p>
+          <strong>BRAR Elettromeccanica SpA</strong><br>
+          Development Project<br>
+          India &amp; Global Operations
+        </p>
+      </div>
+      <div class="meta-box meta-box--right">
+        <h2>Prepared By</h2>
+        <p>
+          <strong>Soseeks India Pvt Ltd</strong><br>
+          Development &amp; Digital Solutions<br>
+          www.soseeks.com
+        </p>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2>Scope of Work</h2>
+      <p style="margin-bottom: 0.75rem;">
+        Design, development, and deployment for BRAR as per the selected page package,
+        including layout, content structure, and production-ready delivery.
+        The complete website will be delivered in <strong>English only</strong>.
+      </p>
+      <p style="margin-bottom: 0.75rem; color: var(--muted); font-size: 0.88rem;">
+        Standard rate: <strong>₹9,000 per page</strong>. Choose from the packages below — 10, 20, or 30 pages.
+      </p>
+      <p class="choose-note" style="margin-bottom: 1rem;">
+        <strong>What counts as one page:</strong> Each separate section of the site that a visitor can open as its own page = 1 page.
+        For example, <strong>Home</strong> = 1 page, <strong>About Us</strong> = 1 page, and <strong>Contact</strong> = 1 page.
+        The package total is the number of such pages included in the project.
+      </p>
+
+      <div class="packages">
+        <article class="package">
+          <h3>10 Pages</h3>
+          <p class="package__rate">10 × ₹9,000</p>
+          <div class="package__row"><span>Subtotal</span><span>₹90,000</span></div>
+          <div class="package__row package__discount"><span>Special Discount</span><span>− ₹15,000</span></div>
+          <div class="package__row"><span>Taxable (GST excl.)</span><span>₹75,000</span></div>
+          <div class="package__row"><span>GST @ 18%</span><span>₹13,500</span></div>
+          <div class="package__row"><span>Total (incl. GST)</span><span>₹88,500</span></div>
+        </article>
+
+        <article class="package">
+          <h3>20 Pages</h3>
+          <p class="package__rate">20 × ₹9,000</p>
+          <div class="package__row"><span>Subtotal</span><span>₹1,80,000</span></div>
+          <div class="package__row package__discount"><span>Special Discount</span><span>− ₹25,000</span></div>
+          <div class="package__row"><span>Taxable (GST excl.)</span><span>₹1,55,000</span></div>
+          <div class="package__row"><span>GST @ 18%</span><span>₹27,900</span></div>
+          <div class="package__row"><span>Total (incl. GST)</span><span>₹1,82,900</span></div>
+        </article>
+
+        <article class="package">
+          <h3>30 Pages</h3>
+          <p class="package__rate">30 × ₹9,000</p>
+          <div class="package__row"><span>Subtotal</span><span>₹2,70,000</span></div>
+          <div class="package__row package__discount"><span>Special Discount</span><span>− ₹50,000</span></div>
+          <div class="package__row"><span>Taxable (GST excl.)</span><span>₹2,20,000</span></div>
+          <div class="package__row"><span>GST @ 18%</span><span>₹39,600</span></div>
+          <div class="package__row"><span>Total (incl. GST)</span><span>₹2,59,600</span></div>
+        </article>
+      </div>
+
+      <p class="choose-note">
+        <strong>Please select one package:</strong> 10 Pages / 20 Pages / 30 Pages — final billing will be based on your chosen option.
+      </p>
+      <p class="note">All amounts are in Indian Rupees (INR). Taxable amounts are GST exclusive; grand totals include GST @ 18% as per prevailing tax regulations.</p>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <h2>Detailed Pricing Breakdown</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Package</th>
+            <th>Pages</th>
+            <th>Rate / Page</th>
+            <th class="num">Taxable Amount</th>
+            <th class="num">GST @ 18%</th>
+            <th class="num">Grand Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Option A</strong> <span class="package__discount" style="font-size: 0.8rem;">(₹15,000 off)</span></td>
+            <td>10</td>
+            <td>₹9,000</td>
+            <td class="num">₹75,000</td>
+            <td class="num">₹13,500</td>
+            <td class="num">₹88,500</td>
+          </tr>
+          <tr>
+            <td><strong>Option B</strong> <span class="package__discount" style="font-size: 0.8rem;">(₹25,000 off)</span></td>
+            <td>20</td>
+            <td>₹9,000</td>
+            <td class="num">₹1,55,000</td>
+            <td class="num">₹27,900</td>
+            <td class="num">₹1,82,900</td>
+          </tr>
+          <tr>
+            <td><strong>Option C</strong> <span class="package__discount" style="font-size: 0.8rem;">(₹50,000 off)</span></td>
+            <td>30</td>
+            <td>₹9,000</td>
+            <td class="num">₹2,20,000</td>
+            <td class="num">₹39,600</td>
+            <td class="num">₹2,59,600</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>What's Included</h2>
+      <ul class="includes">
+        <li>Complete development as per selected package (10, 20, or 30 pages)</li>
+        <li>Website content and interface in <strong>English only</strong></li>
+        <li>Responsive layout for desktop, tablet, and mobile devices</li>
+        <li>Temporary hosting setup and deployment (complimentary — see Terms &amp; Conditions)</li>
+        <li>Ongoing support and revisions until first client satisfaction</li>
+        <li>Performance optimisation and ready-to-deliver output</li>
+      </ul>
+      <p class="note" style="margin-top: 0.85rem; font-style: normal;">
+        <strong>Not included:</strong> Domain name registration or renewal (to be arranged by the client).
+        Hindi or other language versions are not part of this quotation unless agreed separately.
+      </p>
+    </section>
+
+    <section class="section terms">
+      <h2>Terms &amp; Conditions</h2>
+      <ol>
+        <li><strong>Payment Schedule:</strong> 50% of the selected package amount (plus applicable GST) payable before commencement of development; remaining 50% (plus applicable GST) payable before final delivery.<br>
+          <span style="color: var(--muted); font-size: 0.86rem;">
+            Example — 10 Pages: ₹37,500 + GST before start, ₹37,500 + GST before delivery &nbsp;|&nbsp;
+            20 Pages: ₹77,500 + GST / ₹77,500 + GST &nbsp;|&nbsp;
+            30 Pages: ₹1,10,000 + GST / ₹1,10,000 + GST
+          </span>
+        </li>
+        <li><strong>Validity:</strong> This quotation is valid for 15 days from the date of issue.</li>
+        <li><strong>Timeline:</strong> Estimated delivery within <strong>2 weeks</strong> from project commencement, subject to timely receipt of advance payment, content, images, logos, and client approvals. Delays in client inputs may extend the timeline accordingly.</li>
+        <li><strong>Language:</strong> The website will be developed and delivered in <strong>English only</strong>. Translation into Hindi or any other language is not included in this quotation and will be quoted separately if required.</li>
+        <li><strong>Scope:</strong> One page = one distinct site section (e.g. Home, About Us, Contact, Services). Any additional pages, features, or third-party integrations beyond the selected package will be quoted separately at ₹9,000 per page.</li>
+        <li><strong>Content:</strong> Client to provide text, images, logos, and approvals in a timely manner to avoid project delays.</li>
+        <li><strong>Revisions:</strong> Support and revisions are included until first satisfaction as stated above; further changes beyond agreed scope may incur additional charges.</li>
+        <li><strong>Domain Name:</strong> Domain name registration, renewal, and DNS management are <strong>not provided by Soseeks India Pvt Ltd</strong>. The client is responsible for procuring and maintaining their own domain (e.g. brar.in or as per BRAR policy).</li>
+        <li><strong>Hosting (Temporary — Complimentary):</strong> As a goodwill gesture in building our working relationship, Soseeks will provide <strong>temporary hosting at no additional charge</strong> so the site can be reviewed, tested, and demonstrated during the development and approval phase. This temporary hosting is intended for preview and interim use only — not as a permanent production environment for an enterprise client.</li>
+        <li><strong>Migration to Production Server:</strong> Once the website is finalised and approved — typically within <strong>3 to 4 months</strong> of project commencement — the client agrees to migrate the site to BRAR’s own production server, corporate hosting, or designated third-party infrastructure. Soseeks will hand over all project files and reasonable assistance for deployment on the client’s server; ongoing hosting on Soseeks infrastructure beyond the agreed interim period is not included.</li>
+        <li><strong>Taxes:</strong> All prices are exclusive of GST unless stated otherwise. GST @ 18% will be charged additionally on the taxable amount.</li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      <div class="signature">
+        <p>For Soseeks India Pvt Ltd</p>
+        <strong>Authorised Signatory</strong>
+        <p style="margin-top: 2rem; font-size: 0.82rem; color: var(--muted);">Client acceptance signature &amp; date: _________________________</p>
+      </div>
+      <div class="stamp">
+        <p>Thank you for considering Soseeks.<br>We look forward to partnering with BRAR on this project.</p>
+      </div>
+    </footer>
+  </article>
+</body>
+</html>

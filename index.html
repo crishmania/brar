@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BRAR | Where Energy Flows — Integrated High-Current Solutions</title>
-  <meta name="description" content="BRAR Elettromeccanica — Integrated high-current solutions. Busbars, cables, electrode arms, reactors, and flexible connections.">
+  <title>BRAR India | Where Energy Flows — High-Current Solutions</title>
+  <meta name="description" content="BRAR India — Integrated high-current solutions for steel, automotive, electroplating and heavy industry. Technologies, components and engineering across India.">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, nocache">
-  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
-  <meta name="referrer" content="no-referrer">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,19 +18,22 @@
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Header -->
-  <header class="site-header" id="header">
+  <header class="site-header site-header--on-hero" id="header">
     <div class="wrap site-header__inner">
       <a href="#hero" class="site-header__logo" aria-label="BRAR Home">
         <img src="assets/logo-dark.svg" alt="BRAR Elettromeccanica" width="108" height="47">
       </a>
       <nav class="site-header__nav" id="mainNav" aria-label="Main navigation">
         <ul class="site-header__links">
-          <li><a href="#products">Products</a></li>
-          <li><a href="#scope">Our Scope</a></li>
-          <li><a href="#industries">Industries</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#automotive">Automotive</a></li>
+          <li><a href="#products">Industrial</a></li>
+          <li><a href="#sectors">Markets</a></li>
+          <li><a href="#service-block">Service</a></li>
         </ul>
-        <a href="#contact" class="btn btn--copper">Contact Us</a>
+        <div class="site-header__actions">
+          <a href="#contact" class="btn btn--copper btn--sm">Contact</a>
+        </div>
         <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
           <span></span><span></span><span></span>
         </button>
@@ -42,448 +43,550 @@
 
   <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
   <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation">
-    <a href="#products">Products</a>
-    <a href="#scope">Our Scope</a>
-    <a href="#industries">Industries</a>
-    <a href="#about">About</a>
-    <a href="#contact" class="btn btn--copper">Contact Us</a>
+    <a href="#about">About us</a>
+    <a href="#automotive">Automotive</a>
+    <a href="#products">Industrial</a>
+    <a href="#sectors">Markets &amp; Sectors</a>
+    <a href="#service-block">Service</a>
+    <a href="#film">Our film</a>
+    <a href="#clients">Clients</a>
+    <a href="#downloads">Media &amp; Downloads</a>
+    <a href="#contact" class="btn btn--copper">Contact</a>
   </nav>
 
   <main id="main">
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero__grid-bg" aria-hidden="true"></div>
-    <div class="hero__glow" aria-hidden="true"></div>
-    <svg class="hero__flow-line" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,60 Q300,20 600,60 T1200,60" fill="none" stroke="#b5651d" stroke-width="2" stroke-dasharray="8 12">
-        <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="2s" repeatCount="indefinite"/>
-      </path>
-    </svg>
+  <!-- Hero — energy field + cinematic slider -->
+  <section class="hero hero--brar" id="hero">
+    <div class="hero__slider" id="heroSlider" aria-hidden="true">
+      <div class="hero__slide is-active" style="--slide-i:0"><img src="assets/images/hero-01.jpg" alt="" width="1920" height="1080"></div>
+      <div class="hero__slide" style="--slide-i:1"><img src="assets/images/hero-02.jpg" alt="" width="1920" height="1080" loading="lazy"></div>
+      <div class="hero__slide" style="--slide-i:2"><img src="assets/images/hero-03.jpg" alt="" width="1920" height="1080" loading="lazy"></div>
+      <div class="hero__slide" style="--slide-i:3"><img src="assets/images/industrial.jpg" alt="" width="1920" height="1080" loading="lazy"></div>
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <canvas class="hero__canvas" id="energyCanvas" aria-hidden="true"></canvas>
 
-    <div class="wrap hero__inner">
-      <div class="hero__text reveal">
-        <span class="label">Where Energy Flows</span>
-        <h1 class="hero__title">
-          The Complete<br>
-          <span class="highlight">High-Current</span><br>
-          Ecosystem
-        </h1>
-        <p class="hero__desc">While specialists focus on a handful of products, BRAR engineers and delivers the entire spectrum — from water-cooled cables and busbars to electrode arms, reactors, and integrated secondary circuits.</p>
-        <div class="hero__actions">
-          <a href="#products" class="btn btn--copper">
-            Explore Products
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <div class="hero__center">
+      <h1 class="hero__title-brar" aria-label="Where energy flows">
+        <span class="hero__title-line hero__title-line--reveal" style="--word-i:0">Where</span>
+        <span class="hero__title-line hero__title-line--accent hero__title-line--reveal" style="--word-i:1">
+          <span class="hero__energy-glow">energy</span>
+        </span>
+        <span class="hero__title-line hero__title-line--reveal" style="--word-i:2">flows</span>
+      </h1>
+    </div>
+
+    <div class="hero__bottom">
+      <a href="#portals" class="btn btn--copper hero__discover">
+        Discover more
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="hero__subtitle">Leader in high-current systems · Serving India's steel, automotive &amp; industrial sector</p>
+    </div>
+  </section>
+
+  <!-- Corporate film — directly below hero -->
+  <section class="hero-film" id="film">
+    <div class="wrap hero-film__inner">
+      <div class="hero-film__copy reveal">
+        <span class="label label--light">Corporate film</span>
+        <h2>Where energy flows —<br>50 years of BRAR</h2>
+        <p>Discover how BRAR engineers the complete high-current ecosystem — from water-cooled cables and busbars to electrode arms for the world's most demanding plants.</p>
+      </div>
+      <div class="hero-film__player reveal reveal-delay-1" id="filmPlayer">
+        <div class="video-facade" id="videoFacade" role="button" tabindex="0" aria-label="Play BRAR corporate film">
+          <img src="assets/images/where-energy-flows.jpg" alt="" class="video-facade__poster" width="1280" height="720" loading="lazy">
+          <div class="video-facade__overlay"></div>
+          <button type="button" class="video-facade__play" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <span class="video-facade__label">Play film · 50 years of energy</span>
+        </div>
+        <div class="video-embed" id="videoEmbed" hidden>
+          <div class="video-embed__ratio">
+            <iframe
+              id="vimeoFrame"
+              src=""
+              data-src="https://player.vimeo.com/video/1026887430?autoplay=1&title=0&byline=0&portrait=0"
+              title="BRAR — 50 Years Anniversary"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client logos — visible right below the film -->
+    <div class="hero-film__clients" id="clients">
+      <div class="wrap">
+        <p class="partners__label">Trusted by industry leaders in India &amp; worldwide</p>
+        <div class="partners partners--animated" aria-label="Industry partners">
+          <div class="partners__track">
+            <div class="partners__slide">
+              <img src="assets/images/partners/jindal.png" alt="Jindal" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/mittal.png" alt="AM/NS India" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/tenova.png" alt="Tenova" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/danieli.png" alt="Danieli" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/thyssenkrupp.png" alt="thyssenkrupp" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/sms-group.png" alt="SMS group" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/metso.png" alt="Metso" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/sumitomo.png" alt="Sumitomo" class="partners__logo" width="100" height="36" loading="lazy">
+            </div>
+            <div class="partners__slide" aria-hidden="true">
+              <img src="assets/images/partners/jindal.png" alt="" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/mittal.png" alt="" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/tenova.png" alt="" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/danieli.png" alt="" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/thyssenkrupp.png" alt="" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/sms-group.png" alt="" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/metso.png" alt="" class="partners__logo" width="100" height="36" loading="lazy">
+              <img src="assets/images/partners/sumitomo.png" alt="" class="partners__logo" width="100" height="36" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro — BRAR "Leader nei sistemi ad alta corrente" -->
+  <section class="intro-strip" id="about">
+    <div class="wrap">
+      <div class="intro-strip__grid">
+        <div class="intro-strip__lead reveal">
+          <span class="label">Leader in high-current systems</span>
+          <h2>This is us.</h2>
+        </div>
+        <div class="intro-strip__text reveal reveal-delay-1">
+          <p><strong>BRAR Elettromeccanica</strong> is among the world's leading manufacturers of integrated high-current solutions — flexible electrical connections, busbars, electrode arms and water-cooled systems for steelmaking, electroplating, automotive and heavy industry.</p>
+          <p>In <strong>India</strong>, BRAR supports major steel producers, automotive plants and industrial facilities with engineering, manufacturing and lifecycle services — backed by 50 years of global expertise since 1974.</p>
+          <a href="#heritage" class="text-link">Our story <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portal cards — BRAR homepage sections -->
+  <section class="section section--tight" id="portals">
+    <div class="wrap">
+      <div class="portal-grid">
+        <article class="portal-card portal-card--wide reveal" id="about-portal">
+          <a href="#about" class="portal-card__link">
+            <div class="portal-card__media">
+              <img src="assets/images/where-energy-flows.jpg" alt="BRAR global operations" width="800" height="500" loading="lazy">
+            </div>
+            <div class="portal-card__body">
+              <span class="portal-card__tag">About us</span>
+              <h3>Innovation, excellence and global commitment</h3>
+              <p>Built on solid values and a long tradition of excellence — design, production and supply of advanced industrial technology for energy and heavy industry.</p>
+              <span class="portal-card__cta">Discover more</span>
+            </div>
           </a>
-          <a href="#scope" class="btn btn--ghost">Why BRAR</a>
-        </div>
-        <div class="hero__metrics">
-          <div>
-            <div class="metric__val" data-count="50"><span class="metric__count">0</span><span class="metric__suffix">+</span></div>
-            <div class="metric__lbl">Years of Excellence</div>
-          </div>
-          <div>
-            <div class="metric__val" data-count="15"><span class="metric__count">0</span><span class="metric__suffix">+</span></div>
-            <div class="metric__lbl">Product Lines</div>
-          </div>
-          <div>
-            <div class="metric__val">1</div>
-            <div class="metric__lbl">Integrated Partner</div>
-          </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="hero__visual reveal reveal-delay-2">
-        <div class="hero__img-main">
-          <img src="assets/images/hero-01.jpg" alt="BRAR high-current industrial systems" width="800" height="600" fetchpriority="high">
-        </div>
-        <div class="hero__img-float">
-          <img src="assets/images/one-cable.jpg" alt="BRAR One Cable technology" width="400" height="300" loading="lazy">
-        </div>
-        <div class="hero__badge">
-          <div class="hero__badge-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <div>
-            <strong>15+</strong>
-            <span>Product Categories</span>
-          </div>
-        </div>
+        <article class="portal-card reveal reveal-delay-1">
+          <a href="#automotive" class="portal-card__link">
+            <div class="portal-card__media">
+              <img src="assets/images/welding.jpg" alt="Automotive busbars and connections" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portal-card__body">
+              <span class="portal-card__tag">Automotive</span>
+              <h3>Flexible copper busbars for peak performance</h3>
+              <p>High-conductivity copper and aluminium busbars for complex automotive electrical systems.</p>
+              <span class="portal-card__cta">Discover more</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="portal-card reveal reveal-delay-2">
+          <a href="#products" class="portal-card__link">
+            <div class="portal-card__media">
+              <img src="assets/images/industrial.jpg" alt="Industrial high-current solutions" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portal-card__body">
+              <span class="portal-card__tag">Industrial</span>
+              <h3>High-performance solutions for industry</h3>
+              <p>Busbars, electrode arms, water-cooled cables and integrated systems for extreme loads.</p>
+              <span class="portal-card__cta">Discover more</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="portal-card reveal reveal-delay-1">
+          <a href="#sectors" class="portal-card__link">
+            <div class="portal-card__media">
+              <img src="assets/images/steel.jpg" alt="Steel and industrial markets" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portal-card__body">
+              <span class="portal-card__tag">Markets &amp; Sectors</span>
+              <h3>Technologies across strategic industries</h3>
+              <p>From electrolysis to steelmaking, galvanics and automotive — tailored solutions for every sector.</p>
+              <span class="portal-card__cta">Discover more</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="portal-card reveal reveal-delay-2">
+          <a href="#service-block" class="portal-card__link">
+            <div class="portal-card__media">
+              <img src="assets/images/electrolysis.jpg" alt="BRAR engineering services" width="600" height="400" loading="lazy">
+            </div>
+            <div class="portal-card__body">
+              <span class="portal-card__tag">Service</span>
+              <h3>Consulting, design and research</h3>
+              <p>Technical consulting, preventive monitoring, custom engineering and lifecycle support.</p>
+              <span class="portal-card__cta">Discover more</span>
+            </div>
+          </a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Product marquee -->
-  <div class="marquee-section" role="region" aria-label="Product categories">
-    <div class="marquee">
-      <div class="marquee__track">
-        <span class="marquee__item"><span class="marquee__dot"></span>Water-Cooled Cables</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Flexible Connections</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Aluminium Busbars</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Electrode Arms</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Secondary Circuits</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Copper Plates</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Water-Cooled Reactors</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Welding Cables</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>SAF Furnace Cables</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Engineering &amp; Services</span>
-      </div>
-      <div class="marquee__track" aria-hidden="true">
-        <span class="marquee__item"><span class="marquee__dot"></span>Water-Cooled Cables</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Flexible Connections</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Aluminium Busbars</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Electrode Arms</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Secondary Circuits</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Copper Plates</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Water-Cooled Reactors</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Welding Cables</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>SAF Furnace Cables</span>
-        <span class="marquee__item"><span class="marquee__dot"></span>Engineering &amp; Services</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Trust Strip -->
-  <section class="trust-strip" aria-label="Key capabilities">
-    <div class="wrap">
-      <div class="trust-strip__grid">
-        <div class="trust-item reveal">
-          <div class="trust-item__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <strong>Certified Quality</strong>
-            <p>Safety standards and industrial certifications across all product lines.</p>
-          </div>
-        </div>
-        <div class="trust-item reveal reveal-delay-1">
-          <div class="trust-item__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          </div>
-          <div>
-            <strong>Global Operations</strong>
-            <p>Serving steelmakers and industrial plants across Europe, Asia, and the Americas.</p>
-          </div>
-        </div>
-        <div class="trust-item reveal reveal-delay-2">
-          <div class="trust-item__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <div>
-            <strong>In-House Engineering</strong>
-            <p>3D CAD, FEM analysis, and custom design from concept to commissioning.</p>
-          </div>
-        </div>
-        <div class="trust-item reveal reveal-delay-3">
-          <div class="trust-item__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <div>
-            <strong>End-to-End Supply</strong>
-            <p>One manufacturer for every link — cables, arms, busbars, circuits, and more.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Scope Comparison -->
-  <section class="section" id="scope">
+  <!-- Sectors — BRAR "Settori e aree di mercato" -->
+  <section class="section" id="sectors">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="label">The BRAR Difference</span>
-        <h2>Everything They Make —<br>and Far Beyond</h2>
-        <p class="lead">Most high-current manufacturers specialise in two or three product areas. BRAR is the single source for your entire power transmission infrastructure.</p>
+        <span class="label">Markets &amp; sectors</span>
+        <h2>Technologies for strategic industries</h2>
+        <p class="lead">Advanced solutions for electrolysis, steelmaking, resistance welding and automotive — engineered for reliability in the most demanding environments.</p>
       </div>
 
-      <div class="scope">
-        <article class="scope-card scope-card--dim reveal reveal-delay-1">
-          <div class="scope-card__tag">Typical Competitor</div>
-          <h3>Narrow Focus</h3>
-          <p>Specialists typically cover only a fraction of what modern industrial plants require — leaving you to coordinate multiple suppliers.</p>
-          <div class="scope-pills">
-            <span class="scope-pill">Busbars</span>
-            <span class="scope-pill">Cables</span>
-            <span class="scope-pill">Connectors</span>
-          </div>
-          <div class="scope-card__count">3</div>
+      <div class="sector-grid">
+        <article class="sector-card reveal" id="automotive">
+          <a href="#contact" class="sector-card__link">
+            <div class="sector-card__img"><img src="assets/images/welding.jpg" alt="Automotive" width="600" height="400" loading="lazy"></div>
+            <div class="sector-card__overlay">
+              <h3>Automotive</h3>
+              <span class="sector-card__cta">Discover</span>
+            </div>
+          </a>
         </article>
-
-        <article class="scope-card scope-card--featured reveal reveal-delay-2">
-          <div class="scope-card__tag">BRAR Ecosystem</div>
-          <h3>Complete Integration</h3>
-          <p>One manufacturer, one engineering team, one quality standard — across every component of your high-current system.</p>
-          <div class="scope-pills">
-            <span class="scope-pill">Cables &amp; Reactors</span>
-            <span class="scope-pill">Busbars &amp; Circuits</span>
-            <span class="scope-pill">Electrode Arms</span>
-            <span class="scope-pill">Flexible Connections</span>
-            <span class="scope-pill">Copper Components</span>
-            <span class="scope-pill">Engineering</span>
-            <span class="scope-pill">+ More</span>
-          </div>
-          <div class="scope-card__count">15+</div>
+        <article class="sector-card reveal reveal-delay-1">
+          <a href="#contact" class="sector-card__link">
+            <div class="sector-card__img"><img src="assets/images/electrolysis.jpg" alt="Electrolysis and electroplating" width="600" height="400" loading="lazy"></div>
+            <div class="sector-card__overlay">
+              <h3>Electrolysis &amp; Electroplating</h3>
+              <span class="sector-card__cta">Discover</span>
+            </div>
+          </a>
+        </article>
+        <article class="sector-card reveal reveal-delay-2">
+          <a href="#contact" class="sector-card__link">
+            <div class="sector-card__img"><img src="assets/images/steel.jpg" alt="Steel and ferro-alloys" width="600" height="400" loading="lazy"></div>
+            <div class="sector-card__overlay">
+              <h3>Steel &amp; Ferro-Alloys</h3>
+              <span class="sector-card__cta">Discover</span>
+            </div>
+          </a>
+        </article>
+        <article class="sector-card reveal reveal-delay-3">
+          <a href="#contact" class="sector-card__link">
+            <div class="sector-card__img"><img src="assets/images/copper-bg.jpg" alt="Resistance welding" width="600" height="400" loading="lazy"></div>
+            <div class="sector-card__overlay">
+              <h3>Resistance Welding</h3>
+              <span class="sector-card__cta">Discover</span>
+            </div>
+          </a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Product Portfolio -->
-  <section class="section section--bg" id="products">
+  <!-- Heritage — 50 years + BRAR film -->
+  <section class="section section--warm" id="heritage">
     <div class="wrap">
-      <div class="section-head section-head--center section-head--wide reveal">
-        <span class="label">Product Portfolio</span>
-        <h2>Engineered for Every Link<br>in the Chain</h2>
-        <p class="lead">Critical components and integrated solutions designed for reliability in the world's most demanding industrial environments.</p>
-      </div>
-
-      <div class="products">
-        <!-- Featured row: hero product + value prop -->
-        <div class="products__featured">
-          <article class="product-card product-card--hero reveal">
-            <div class="product-card__media">
-              <img src="assets/images/one-cable.jpg" alt="Water-cooled cables" width="600" height="400" loading="lazy">
-              <span class="product-card__badge">Flagship</span>
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__num">01</span>
-              <h3>Water-Cooled Cables</h3>
-              <p>One Cable technology for EAF, induction, and electroplating — exceptional performance in extreme operating conditions.</p>
-              <a href="#contact" class="product-card__link">Discuss your project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </article>
-
-          <article class="product-card product-card--value reveal reveal-delay-1">
-            <div class="product-card__value-inner">
-              <span class="label">Integrated</span>
-              <h3>One Partner.<br>Every Component.</h3>
-              <p>From design and FEM simulation to manufacturing, installation, and lifecycle maintenance — all under one roof.</p>
-              <ul class="product-card__list">
-                <li>15+ product categories</li>
-                <li>Single quality standard</li>
-                <li>Full engineering support</li>
-              </ul>
-            </div>
-          </article>
+      <div class="heritage">
+        <div class="heritage__media reveal">
+          <div class="heritage__img">
+            <img src="assets/images/hero-02.jpg" alt="BRAR industrial manufacturing" width="800" height="600" loading="lazy">
+          </div>
+          <div class="heritage__badge">
+            <strong data-count="50"><span class="metric__count">0</span></strong>
+            <span>Years of<br>energy</span>
+          </div>
         </div>
-
-        <!-- Uniform 3-column grid -->
-        <div class="products__grid">
-          <article class="product-card reveal">
-            <div class="product-card__media">
-              <img src="assets/images/copper-bg.jpg" alt="Flexible connections" width="600" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__num">02</span>
-              <h3>Flexible Connections</h3>
-              <p>Lamellar shunts, copper braids, and pressure-welded assemblies for high-current applications.</p>
-              <a href="#contact" class="product-card__link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </article>
-
-          <article class="product-card reveal reveal-delay-1">
-            <div class="product-card__media">
-              <img src="assets/images/hero-02.jpg" alt="Power conducting arms" width="600" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__num">03</span>
-              <h3>Power Conducting Arms</h3>
-              <p>Steel-copper and aluminium electrode arms for EAF, LF, and SAF furnace types.</p>
-              <a href="#contact" class="product-card__link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </article>
-
-          <article class="product-card reveal reveal-delay-2">
-            <div class="product-card__media">
-              <img src="assets/images/steel.jpg" alt="Secondary circuits" width="600" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__num">04</span>
-              <h3>Secondary Circuits</h3>
-              <p>Complete secondary circuit solutions for EAF, LF, and SAF furnaces.</p>
-              <a href="#contact" class="product-card__link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-card__media">
-              <img src="assets/images/industrial.jpg" alt="Aluminium busbars" width="600" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__num">05</span>
-              <h3>Aluminium Busbars &amp; Copper Plates</h3>
-              <p>Custom-engineered conductors for high electrical loads with maximum efficiency.</p>
-              <a href="#contact" class="product-card__link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </article>
-
-          <article class="product-card reveal reveal-delay-1">
-            <div class="product-card__media">
-              <img src="assets/images/welding.jpg" alt="Welding cables" width="600" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__num">06</span>
-              <h3>Welding Cables</h3>
-              <p>High-performance cables for resistance welding and robotic applications.</p>
-              <a href="#contact" class="product-card__link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </article>
-
-          <article class="product-card reveal reveal-delay-2">
-            <div class="product-card__media">
-              <img src="assets/images/electrolysis.jpg" alt="Engineering services" width="600" height="400" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__num">07</span>
-              <h3>Engineering &amp; Services</h3>
-              <p>3D CAD, FEM analysis, Telemaster monitoring, and preventive maintenance.</p>
-              <a href="#contact" class="product-card__link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </article>
+        <div class="heritage__content reveal reveal-delay-2">
+          <span class="label">Since 1974</span>
+          <h2>50 years powering industry worldwide</h2>
+          <p>From electric arc and induction furnaces to reduction furnaces, ferro-alloy plants, smelters and electrolytic installations — BRAR delivers integrated high-current solutions at global scale.</p>
+          <p>In <strong>India</strong>, we partner with leading steelmakers and industrial groups — combining Italian engineering heritage with local project support.</p>
+          <div class="heritage__links">
+            <a href="#film" class="heritage__pill">Watch our story</a>
+            <a href="#clients" class="heritage__pill">Our clients</a>
+            <a href="#contact" class="heritage__pill">Contact India</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Industries -->
-  <section class="section" id="industries">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="label">Industries</span>
-        <h2>Powering Critical<br>Industrial Sectors</h2>
-        <p class="lead">Tailored high-current solutions across steelmaking, electroplating, automotive, and beyond.</p>
-      </div>
-
-      <div class="industries">
-        <article class="ind-card reveal reveal-delay-1">
-          <div class="ind-card__img"><img src="assets/images/steel.jpg" alt="Steel and ferro-alloys" width="600" height="400" loading="lazy"></div>
-          <div class="ind-card__body">
-            <h3>Steel &amp; Ferro-Alloys</h3>
-            <p>EAF, LF, SAF furnaces, electrode arms, and complete secondary circuit systems for global steelmakers.</p>
-            <a href="#contact" class="ind-card__link">Explore solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </article>
-
-        <article class="ind-card reveal reveal-delay-2">
-          <div class="ind-card__img"><img src="assets/images/electrolysis.jpg" alt="Electrolysis and electroplating" width="600" height="400" loading="lazy"></div>
-          <div class="ind-card__body">
-            <h3>Electrolysis &amp; Electroplating</h3>
-            <p>High-current connections, busbars, and water-cooled systems for smelters and galvanic plants.</p>
-            <a href="#contact" class="ind-card__link">Explore solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </article>
-
-        <article class="ind-card reveal reveal-delay-3">
-          <div class="ind-card__img"><img src="assets/images/welding.jpg" alt="Automotive and welding" width="600" height="400" loading="lazy"></div>
-          <div class="ind-card__body">
-            <h3>Automotive &amp; Welding</h3>
-            <p>Resistance welding cables, robotic connections, and flexible conductors for production lines.</p>
-            <a href="#contact" class="ind-card__link">Explore solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pillars -->
-  <section class="section section--warm">
+  <!-- Clients — logo grid -->
+  <section class="section section--bg" id="clients-grid">
     <div class="wrap">
       <div class="section-head section-head--center reveal">
-        <span class="label">Why BRAR</span>
-        <h2>Built on Precision.<br>Driven by Innovation.</h2>
+        <span class="label">Our clients</span>
+        <h2>Trusted by industry leaders</h2>
+        <p class="lead">BRAR powers critical infrastructure for steelmakers, plant builders and industrial groups across India and worldwide.</p>
       </div>
-
-      <div class="pillars">
-        <div class="pillar reveal reveal-delay-1">
-          <div class="pillar__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <h3>50 Years Heritage</h3>
-          <p>Founded in 1974, a global leader in flexible electrical connections for high-current applications.</p>
-        </div>
-        <div class="pillar reveal reveal-delay-2">
-          <div class="pillar__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>Full Integration</h3>
-          <p>One partner for every component — eliminating supplier fragmentation across your plant.</p>
-        </div>
-        <div class="pillar reveal reveal-delay-3">
-          <div class="pillar__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <h3>Custom Engineering</h3>
-          <p>3D CAD, FEM simulations, and bespoke designs for your exact operational needs.</p>
-        </div>
-        <div class="pillar reveal reveal-delay-4">
-          <div class="pillar__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          </div>
-          <h3>Global Reach</h3>
-          <p>Serving steelmakers, smelters, and industrial plants worldwide with local expertise.</p>
-        </div>
+      <div class="clients-grid">
+        <div class="client-card reveal"><img src="assets/images/partners/jindal.png" alt="Jindal" width="120" height="44" loading="lazy"><span>Jindal</span></div>
+        <div class="client-card reveal reveal-delay-1"><img src="assets/images/partners/mittal.png" alt="AM/NS India" width="120" height="44" loading="lazy"><span>AM/NS India</span></div>
+        <div class="client-card reveal reveal-delay-2"><img src="assets/images/partners/tenova.png" alt="Tenova" width="120" height="44" loading="lazy"><span>Tenova</span></div>
+        <div class="client-card reveal reveal-delay-3"><img src="assets/images/partners/danieli.png" alt="Danieli" width="120" height="44" loading="lazy"><span>Danieli</span></div>
+        <div class="client-card reveal"><img src="assets/images/partners/thyssenkrupp.png" alt="thyssenkrupp" width="120" height="44" loading="lazy"><span>thyssenkrupp</span></div>
+        <div class="client-card reveal reveal-delay-1"><img src="assets/images/partners/sms-group.png" alt="SMS group" width="120" height="44" loading="lazy"><span>SMS group</span></div>
+        <div class="client-card reveal reveal-delay-2"><img src="assets/images/partners/metso.png" alt="Metso" width="120" height="44" loading="lazy"><span>Metso</span></div>
+        <div class="client-card reveal reveal-delay-3"><img src="assets/images/partners/sumitomo.png" alt="Sumitomo" width="120" height="44" loading="lazy"><span>Sumitomo</span></div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section" id="about">
+  <!-- Spotlight trio — BRAR homepage cards -->
+  <section class="section section--bg">
     <div class="wrap">
-      <div class="story">
-        <div class="story__media reveal">
-          <div class="story__img">
-            <img src="assets/images/where-energy-flows.jpg" alt="BRAR integrated solutions" width="800" height="600" loading="lazy">
-          </div>
-          <div class="story__stamp">
-            <strong>50</strong>
-            <span>Years of<br>Energy</span>
-          </div>
-        </div>
-        <div class="story__content reveal reveal-delay-2">
-          <span class="label">Our Story</span>
-          <h2>Where Energy Flows Since 1974</h2>
-          <p>Founded by Cav. Livio Arioli, Brar Elettromeccanica has grown into one of the world's leading manufacturers of integrated high-current solutions.</p>
-          <p>Operating across steelmaking, electroplating, resistance welding, robotics, and industrial furnaces — BRAR delivers advanced, customised solutions for the most complex industrial applications on a global scale.</p>
-          <a href="#contact" class="btn btn--dark">
-            Get in Touch
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <div class="spotlight-grid">
+        <article class="spotlight-card reveal">
+          <a href="#products" class="spotlight-card__link">
+            <div class="spotlight-card__img"><img src="assets/images/one-cable.jpg" alt="Water-cooled cables" width="600" height="400" loading="lazy"></div>
+            <div class="spotlight-card__body">
+              <h3>Water-cooled cables</h3>
+              <p>Exceptional performance for critical industrial applications — OneCable technology.</p>
+              <span class="spotlight-card__cta">Discover</span>
+            </div>
           </a>
-        </div>
+        </article>
+        <article class="spotlight-card reveal reveal-delay-1">
+          <a href="#about" class="spotlight-card__link">
+            <div class="spotlight-card__img"><img src="assets/images/industrial.jpg" alt="Sustainability" width="600" height="400" loading="lazy"></div>
+            <div class="spotlight-card__body">
+              <h3>Sustainability</h3>
+              <p>Continuous commitment to sustainable development and environmental innovation.</p>
+              <span class="spotlight-card__cta">Discover</span>
+            </div>
+          </a>
+        </article>
+        <article class="spotlight-card reveal reveal-delay-2">
+          <a href="#sectors" class="spotlight-card__link">
+            <div class="spotlight-card__img"><img src="assets/images/hero-03.jpg" alt="Research centers" width="600" height="400" loading="lazy"></div>
+            <div class="spotlight-card__body">
+              <h3>Particle accelerators &amp; research</h3>
+              <p>Technological innovation in collaboration with leading scientific institutions.</p>
+              <span class="spotlight-card__cta">Discover</span>
+            </div>
+          </a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Partners -->
-  <section class="partners">
+  <!-- Product areas — Druseidt-style grid -->
+  <section class="section" id="products">
     <div class="wrap">
-      <p class="partners__label">Trusted by Global Industry Leaders</p>
-      <div class="partners__row">
-        <img src="assets/images/partners/tenova.png" alt="Tenova" class="partners__logo" width="100" height="36" loading="lazy">
-        <img src="assets/images/partners/danieli.png" alt="Danieli" class="partners__logo" width="100" height="36" loading="lazy">
-        <img src="assets/images/partners/thyssenkrupp.png" alt="thyssenkrupp" class="partners__logo" width="100" height="36" loading="lazy">
-        <img src="assets/images/partners/sms-group.png" alt="SMS group" class="partners__logo" width="100" height="36" loading="lazy">
-        <img src="assets/images/partners/metso.png" alt="Metso" class="partners__logo" width="100" height="36" loading="lazy">
-        <img src="assets/images/partners/sumitomo.png" alt="Sumitomo" class="partners__logo" width="100" height="36" loading="lazy">
-        <img src="assets/images/partners/jindal.png" alt="Jindal" class="partners__logo" width="100" height="36" loading="lazy">
-        <img src="assets/images/partners/mittal.png" alt="AM/NS India" class="partners__logo" width="100" height="36" loading="lazy">
+      <div class="section-head section-head--center reveal">
+        <span class="label">Product areas</span>
+        <h2>Engineered for every link in the chain</h2>
+        <p class="lead">From flexible connections to complete secondary circuits — one integrated partner for your entire high-current infrastructure.</p>
+      </div>
+
+      <div class="product-areas">
+        <article class="product-area reveal">
+          <a href="#contact" class="product-area__link">
+            <div class="product-area__media">
+              <img src="assets/images/one-cable.jpg" alt="Water-cooled cables and connections" width="600" height="400" loading="lazy">
+            </div>
+            <div class="product-area__body">
+              <span class="product-area__num">01</span>
+              <h3>Water-cooled cables &amp; connections</h3>
+              <p>OneCable technology, rotating terminals, tubes and protections.</p>
+            </div>
+          </a>
+        </article>
+        <article class="product-area reveal reveal-delay-1">
+          <a href="#contact" class="product-area__link">
+            <div class="product-area__media">
+              <img src="assets/images/copper-bg.jpg" alt="Flexible connections" width="600" height="400" loading="lazy">
+            </div>
+            <div class="product-area__body">
+              <span class="product-area__num">02</span>
+              <h3>Flexible connections</h3>
+              <p>Lamellar shunts, copper braids and pressure-welded assemblies.</p>
+            </div>
+          </a>
+        </article>
+        <article class="product-area reveal reveal-delay-2">
+          <a href="#contact" class="product-area__link">
+            <div class="product-area__media">
+              <img src="assets/images/hero-02.jpg" alt="Electrode arms and busbars" width="600" height="400" loading="lazy">
+            </div>
+            <div class="product-area__body">
+              <span class="product-area__num">03</span>
+              <h3>Electrode arms &amp; busbars</h3>
+              <p>Steel-copper and aluminium arms, secondary circuits, copper plates.</p>
+            </div>
+          </a>
+        </article>
+        <article class="product-area reveal reveal-delay-3">
+          <a href="#contact" class="product-area__link">
+            <div class="product-area__media">
+              <img src="assets/images/steel.jpg" alt="Engineering and services" width="600" height="400" loading="lazy">
+            </div>
+            <div class="product-area__body">
+              <span class="product-area__num">04</span>
+              <h3>Engineering &amp; services</h3>
+              <p>3D CAD, FEM analysis, Telemaster monitoring and preventive maintenance.</p>
+            </div>
+          </a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section" id="contact">
+  <!-- Service block -->
+  <section class="section section--dark" id="service-block">
     <div class="wrap">
-      <div class="cta-block">
-        <div class="cta-block__pattern" aria-hidden="true"></div>
-        <div class="cta-block__inner reveal">
-          <span class="label label--on-dark">Start Your Project</span>
-          <h2>Ready for a Complete<br>High-Current Partner?</h2>
-          <p>From a single component to a fully integrated system — our engineering team is ready to deliver.</p>
-          <div class="cta-block__actions">
-            <a href="mailto:info@brar.it" class="btn btn--copper">info@brar.it</a>
-            <a href="tel:+390376534500" class="btn btn--light-outline">+39 0376 534500</a>
+      <div class="service-block reveal">
+        <span class="label label--on-dark">Service</span>
+        <h2>Consulting, design and research for tomorrow's industrial challenges</h2>
+        <p>From technical consulting and performance monitoring to custom engineering and continuous R&amp;D — BRAR ensures efficiency, reliability and quality in every project.</p>
+        <div class="service-block__grid">
+          <div class="service-item">
+            <strong>Design &amp; engineering</strong>
+            <span>3D CAD, FEM simulation, custom solutions</span>
+          </div>
+          <div class="service-item">
+            <strong>Prevention &amp; monitoring</strong>
+            <span>Telemaster and preventive maintenance</span>
+          </div>
+          <div class="service-item">
+            <strong>Maintenance &amp; repairs</strong>
+            <span>Lifecycle support for critical systems</span>
           </div>
         </div>
+        <a href="#contact" class="btn btn--copper">Talk to our team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads — Druseidt-style -->
+  <section class="section section--bg" id="downloads">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="label">Downloads</span>
+        <h2>Catalogues &amp; technical resources</h2>
+        <p class="lead">Product catalogues, flyers and technical documentation — available in the media section.</p>
+      </div>
+      <div class="download-grid">
+        <a href="#contact" class="download-card reveal">
+          <span class="download-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+          </span>
+          <span class="download-card__title">Product catalogue</span>
+          <span class="download-card__meta">PDF · High-current solutions</span>
+        </a>
+        <a href="#contact" class="download-card reveal reveal-delay-1">
+          <span class="download-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+          </span>
+          <span class="download-card__title">Water-cooled cables</span>
+          <span class="download-card__meta">PDF · OneCable technology</span>
+        </a>
+        <a href="#contact" class="download-card reveal reveal-delay-2">
+          <span class="download-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+          </span>
+          <span class="download-card__title">Electrode arms</span>
+          <span class="download-card__meta">PDF · EAF, LF &amp; SAF</span>
+        </a>
+        <a href="#contact" class="download-card reveal reveal-delay-3">
+          <span class="download-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+          </span>
+          <span class="download-card__title">Company profile</span>
+          <span class="download-card__meta">PDF · BRAR overview</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact hub — India + Global HQ -->
+  <section class="section contact-hub" id="contact">
+    <div class="wrap">
+      <div class="section-head section-head--center reveal">
+        <span class="label">Get in touch</span>
+        <h2>Connect with BRAR</h2>
+        <p class="lead">Engineering support for India and worldwide — from a single component to a fully integrated high-current system.</p>
+      </div>
+
+      <div class="contact-hub__grid">
+        <article class="contact-card contact-card--india reveal">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <span class="contact-card__region">India</span>
+          <h3>BRAR India Operations</h3>
+          <p class="contact-card__desc">Sales, project engineering and after-sales support for steel, automotive and industrial clients across India.</p>
+          <ul class="contact-card__details">
+            <li>
+              <span class="contact-card__lbl">Email</span>
+              <a href="mailto:info@brar.it">info@brar.it</a>
+            </li>
+            <li>
+              <span class="contact-card__lbl">Phone</span>
+              <a href="tel:+390376534500">+39 0376 534500</a>
+            </li>
+            <li>
+              <span class="contact-card__lbl">Sectors</span>
+              <span>Steel · Automotive · Electroplating</span>
+            </li>
+          </ul>
+          <a href="mailto:info@brar.it" class="btn btn--copper contact-card__btn">Request a quote</a>
+        </article>
+
+        <article class="contact-card contact-card--hq reveal reveal-delay-1">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span class="contact-card__region">Global headquarters</span>
+          <h3>BRAR Elettromeccanica SpA</h3>
+          <p class="contact-card__desc">Design, manufacturing and integrated solutions — headquarters in Italy since 1974.</p>
+          <ul class="contact-card__details">
+            <li>
+              <span class="contact-card__lbl">Address</span>
+              <span>Via Martin Luther King, 3<br>46020 Pegognaga (MN), Italy</span>
+            </li>
+            <li>
+              <span class="contact-card__lbl">Phone</span>
+              <a href="tel:+390376534500">+39 0376 534500</a>
+            </li>
+            <li>
+              <span class="contact-card__lbl">VAT / Tax ID</span>
+              <span>P.IVA 00267270205</span>
+            </li>
+          </ul>
+          <a href="#downloads" class="btn btn--ghost contact-card__btn">Media &amp; downloads</a>
+        </article>
+
+        <article class="contact-card contact-card--accent reveal reveal-delay-2">
+          <div class="contact-card__icon contact-card__icon--light" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <span class="contact-card__region">Commercial network</span>
+          <h3>Speak with an expert</h3>
+          <p class="contact-card__desc">Our commercial team covers India, Europe, Asia and the Americas — ready to discuss your high-current project.</p>
+          <div class="contact-card__quick">
+            <a href="mailto:info@brar.it" class="contact-quick-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              info@brar.it
+            </a>
+            <a href="tel:+390376534500" class="contact-quick-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +39 0376 534500
+            </a>
+          </div>
+          <a href="#portals" class="btn btn--light-outline contact-card__btn">Explore solutions</a>
+        </article>
       </div>
     </div>
   </section>
@@ -496,23 +599,24 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="assets/logo-dark.svg" alt="BRAR" width="96">
-          <p>Technologies, components, and integrated solutions for high-current applications. Where energy flows.</p>
+          <p>Technologies, components and integrated solutions for high-current applications. Where energy flows.</p>
         </div>
         <div class="footer-col">
-          <h4>Products</h4>
+          <h4>About us</h4>
           <ul>
-            <li><a href="#products">Water-Cooled Cables</a></li>
-            <li><a href="#products">Flexible Connections</a></li>
-            <li><a href="#products">Electrode Arms</a></li>
-            <li><a href="#products">Secondary Circuits</a></li>
+            <li><a href="#heritage">History</a></li>
+            <li><a href="#about">Global presence</a></li>
+            <li><a href="#about">Innovation</a></li>
+            <li><a href="#about">Production</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Industries</h4>
+          <h4>Industrial</h4>
           <ul>
-            <li><a href="#industries">Steel &amp; Ferro-Alloys</a></li>
-            <li><a href="#industries">Electrolysis &amp; Plating</a></li>
-            <li><a href="#industries">Automotive &amp; Welding</a></li>
+            <li><a href="#products">Water-cooled cables</a></li>
+            <li><a href="#products">Electrode arms</a></li>
+            <li><a href="#products">Secondary circuits</a></li>
+            <li><a href="#products">Flexible connections</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -520,12 +624,17 @@
           <ul>
             <li><a href="mailto:info@brar.it">info@brar.it</a></li>
             <li><a href="tel:+390376534500">+39 0376 534500</a></li>
-            <li>Via Arioli, 16<br>46043 Castiglione delle Stiviere, Italy</li>
+            <li>Via Martin Luther King, 3<br>Pegognaga (MN), Italy</li>
+            <li><a href="#contact">India operations</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 BRAR Elettromeccanica SpA. All rights reserved.</span>
+        <span class="footer-bottom__links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+        </span>
       </div>
     </div>
   </footer>
