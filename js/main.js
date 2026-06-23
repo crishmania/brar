@@ -50,7 +50,7 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navDrawer && navDrawer.classList.contains('is-open')) {
       closeNav();
-      menuBtn.focus();
+      if (menuBtn) menuBtn.focus();
     }
   });
 
@@ -130,6 +130,7 @@
     let w = 0;
     let h = 0;
     let animId = null;
+    let running = true;
 
     function resize() {
       const rect = canvas.parentElement.getBoundingClientRect();
@@ -150,6 +151,7 @@
     }
 
     function draw() {
+      if (!running) return;
       ctx.clearRect(0, 0, w, h);
 
       for (let i = 0; i < particles.length; i++) {
@@ -190,6 +192,16 @@
     resize();
     createParticles();
     draw();
+
+    document.addEventListener('visibilitychange', () => {
+      running = !document.hidden;
+      if (running) {
+        draw();
+      } else if (animId) {
+        cancelAnimationFrame(animId);
+        animId = null;
+      }
+    });
 
     window.addEventListener('resize', () => {
       resize();

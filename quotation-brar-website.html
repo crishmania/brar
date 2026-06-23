@@ -249,9 +249,149 @@
       color: #475569;
     }
 
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .table-wrap table {
+      min-width: 640px;
+    }
+
+    .terms-example {
+      color: var(--muted);
+      font-size: 0.86rem;
+      display: block;
+      margin-top: 0.35rem;
+    }
+
     @media (max-width: 720px) {
+      body {
+        padding: 0.75rem 0.5rem 1.5rem;
+      }
+
+      .print-toolbar {
+        justify-content: stretch;
+      }
+
+      .print-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .page {
+        border-left: none;
+        border-right: none;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 1.25rem 1rem 1.1rem;
+      }
+
+      .header::after {
+        left: 1rem;
+        right: 1rem;
+      }
+
+      .logo {
+        margin-top: 0;
+      }
+
+      .logo svg {
+        height: 52px;
+      }
+
+      .company-meta {
+        text-align: left;
+        width: 100%;
+        font-size: 0.82rem;
+      }
+
+      .title-block {
+        padding: 1.25rem 1rem 1rem;
+      }
+
+      .title-block h1 {
+        font-size: 1.35rem;
+        line-height: 1.25;
+      }
+
+      .title-block p {
+        font-size: 0.84rem;
+        line-height: 1.55;
+      }
+
+      .meta-grid {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+        padding: 1.15rem 1rem;
+      }
+
+      .meta-box--right {
+        text-align: left;
+        justify-self: stretch;
+      }
+
+      .section {
+        padding: 1.15rem 1rem;
+      }
+
       .packages {
         grid-template-columns: 1fr;
+      }
+
+      .package h3 {
+        font-size: 1.2rem;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 1.15rem 1rem 1.5rem;
+      }
+
+      .stamp {
+        text-align: left;
+      }
+
+      .signature p {
+        margin-bottom: 1.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo svg {
+        height: 46px;
+      }
+
+      .title-block h1 {
+        font-size: 1.2rem;
+      }
+
+      .package__row {
+        font-size: 0.8rem;
+      }
+
+      .section p,
+      .section li {
+        font-size: 0.88rem;
+      }
+
+      thead th,
+      tbody td {
+        padding: 0.65rem 0.55rem;
+        font-size: 0.8rem;
+      }
+
+      thead th {
+        font-size: 0.68rem;
       }
     }
 
@@ -556,6 +696,7 @@
 
     <section class="section" style="padding-top: 0;">
       <h2>Detailed Pricing Breakdown</h2>
+      <div class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -594,6 +735,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <section class="section">
@@ -615,10 +757,10 @@
     <section class="section terms">
       <h2>Terms &amp; Conditions</h2>
       <ol>
-        <li><strong>Payment Schedule:</strong> 50% of the selected package amount (plus applicable GST) payable before commencement of development; remaining 50% (plus applicable GST) payable before final delivery.<br>
-          <span style="color: var(--muted); font-size: 0.86rem;">
-            Example — 10 Pages: ₹37,500 + GST before start, ₹37,500 + GST before delivery &nbsp;|&nbsp;
-            20 Pages: ₹77,500 + GST / ₹77,500 + GST &nbsp;|&nbsp;
+        <li><strong>Payment Schedule:</strong> 50% of the selected package amount (plus applicable GST) payable before commencement of development; remaining 50% (plus applicable GST) payable before final delivery.
+          <span class="terms-example">
+            Example — 10 Pages: ₹37,500 + GST before start, ₹37,500 + GST before delivery<br>
+            20 Pages: ₹77,500 + GST / ₹77,500 + GST<br>
             30 Pages: ₹1,10,000 + GST / ₹1,10,000 + GST
           </span>
         </li>
@@ -631,7 +773,7 @@
         <li><strong>Domain Name:</strong> Domain name registration, renewal, and DNS management are <strong>not provided by Soseeks India Pvt Ltd</strong>. The client is responsible for procuring and maintaining their own domain (e.g. brar.in or as per BRAR policy).</li>
         <li><strong>Hosting (Temporary — Complimentary):</strong> As a goodwill gesture in building our working relationship, Soseeks will provide <strong>temporary hosting at no additional charge</strong> so the site can be reviewed, tested, and demonstrated during the development and approval phase. This temporary hosting is intended for preview and interim use only — not as a permanent production environment for an enterprise client.</li>
         <li><strong>Migration to Production Server:</strong> Once the website is finalised and approved — typically within <strong>3 to 4 months</strong> of project commencement — the client agrees to migrate the site to BRAR’s own production server, corporate hosting, or designated third-party infrastructure. Soseeks will hand over all project files and reasonable assistance for deployment on the client’s server; ongoing hosting on Soseeks infrastructure beyond the agreed interim period is not included.</li>
-        <li><strong>Taxes:</strong> All prices are exclusive of GST unless stated otherwise. GST @ 18% will be charged additionally on the taxable amount.</li>
+        <li><strong>Taxes:</strong> Taxable amounts shown in the pricing table are exclusive of GST. GST @ 18% is calculated on the taxable amount and included in the stated grand totals.</li>
       </ol>
     </section>
 

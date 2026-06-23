@@ -27,7 +27,7 @@
 
     if (e.ctrlKey || e.metaKey) {
       var k = key.toLowerCase();
-      if (['u', 's', 'c', 'a', 'p', 'x'].indexOf(k) !== -1) return true;
+      if (['u', 's', 'c', 'a', 'x'].indexOf(k) !== -1) return true;
       if (e.shiftKey && ['i', 'j', 'c', 'k'].indexOf(k) !== -1) return true;
     }
 
@@ -92,13 +92,4 @@
 
   window.addEventListener('resize', checkDevTools);
   setInterval(checkDevTools, 1000);
-
-  if (window.matchMedia) {
-    var printMq = window.matchMedia('print');
-    if (printMq.addEventListener) {
-      printMq.addEventListener('change', function (e) {
-        if (e.matches) document.body.classList.add('print-blocked');
-      });
-    }
-  }
 })();
